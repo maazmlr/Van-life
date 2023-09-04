@@ -10,6 +10,9 @@ const Nav=()=>{
             #VANLIFE
             </Link>
             <div className="links">
+                <Link className="about" to={"/host"}>
+                    Host
+                </Link>
                 <Link className="about" to={"/about"}>
                     About
                 </Link>
