@@ -1,10 +1,10 @@
 import React from "react";
 import '../App.css' 
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Nav=()=>{
     return(
-
+        <>
         <nav>
             <Link className="logo" to={"/"}>
             #VANLIFE
@@ -18,6 +18,8 @@ const Nav=()=>{
                 </Link>
             </div>
         </nav>
+        <Outlet/>
+        </>
 
     )
 }

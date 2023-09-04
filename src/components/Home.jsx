@@ -1,11 +1,9 @@
 import React from "react";
-import Nav from "./Nav";
 import { Link } from "react-router-dom";
 
 const Home= ()=>{
     return(
         <>
-        <Nav/>
         <div className="container">
             <h1 className="h-content">
             You got the travel plans, we got the travel vans.

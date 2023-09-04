@@ -1,11 +1,9 @@
 import React from "react";
-import Nav from "./Nav";
 import { Link } from "react-router-dom";
 
 const About =()=>{
     return(
         <>
-        <Nav/>
         <div className="container-about">
         <div className="img"></div>
         <p className="h-content" style={{color:"black" , fontSize:"2rem", textAlign:"center"}}>
