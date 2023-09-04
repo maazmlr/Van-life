@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const VansDetails=()=>{
     const params=useParams()
@@ -16,7 +16,7 @@ const VansDetails=()=>{
         {
             vans ?(
             <>
-            <Link to={"/vans"} className="back">back to the vans</Link>
+            <NavLink to={"/vans"} className="back">back to the vans</NavLink>
             <div className="vans-body">
                 <img className="van-img" src={ `${vans.imageUrl}`} alt="" />
                 <buttton className="type">{vans.type}</buttton>

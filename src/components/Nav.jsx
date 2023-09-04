@@ -1,27 +1,26 @@
 import React from "react";
 import '../App.css' 
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Nav=()=>{
     return(
         <>
         <nav>
-            <Link className="logo" to={"/"}>
+            <NavLink className="logo" to={"/"}>
             #VANLIFE
-            </Link>
-            <div className="links">
-                <Link className="about" to={"/host"}>
+            </NavLink>
+            <div className="NavLinks">
+                <NavLink className={({isActive})=> isActive ? "active-link" : "about"} to={"/host"}>
                     Host
-                </Link>
-                <Link className="about" to={"/about"}>
+                </NavLink>
+                <NavLink className={({isActive})=> isActive ? "active-link" : "about"} to={"/about"}>
                     About
-                </Link>
-                <Link className="vans" to={"/vans"}>
+                </NavLink>
+                <NavLink className={({isActive})=> isActive ? "active-link" : "about"} to={"/vans"}>
                     Vans
-                </Link>
+                </NavLink>
             </div>
         </nav>
-        <Outlet/>
         </>
 
     )

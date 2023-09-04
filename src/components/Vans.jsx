@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import VansImg from "./VansImg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Vans=()=>{
     const [data,setData]=useState([])
@@ -11,7 +11,7 @@ const Vans=()=>{
     },[])
     const elements=data.map((v,i)=>{
         return(
-          <Link to={`./${v.id}`}>
+          <NavLink to={`./${v.id}`}>
         <VansImg
         key={v.id}
         imgurl={v.imageUrl} 
@@ -20,7 +20,7 @@ const Vans=()=>{
             type={v.type}
 
         />
-        </Link>  
+        </NavLink>  
      ) })
    const a =data.map((v)=>{
         console.log(v.imageUrl)

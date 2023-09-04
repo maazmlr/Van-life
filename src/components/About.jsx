@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const About =()=>{
     return(
@@ -22,7 +22,7 @@ Our team is full of vanlife enthusiasts who know firsthand the magic of touring 
 
             <p className="h-content"  style={{color:"black" , fontSize:"2rem", textAlign:"center",margin:"0"}}>
             Your van is ready.         </p>
-            <Link to={"/vans"} ><button className="abc">Exploe your vans</button></Link>
+            <NavLink to={"/vans"} ><button className="abc">Exploe your vans</button></NavLink>
 
         </div>
         </div>

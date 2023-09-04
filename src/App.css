@@ -18,7 +18,7 @@ font-weight: 900;
 line-height: 2.51694rem; /* 158.842% */
 
 }
-.about,.vans{
+.about{
     color: #4D4D4D;
 text-align: right;
 font-family: Inter;
@@ -223,6 +223,52 @@ line-height: 1.49494rem; /* 149.496% */
     font-size: 2rem;
     font-weight: 500;
     font-family: Inter;
+}
+footer{
+    width: 100%;
+    height: 4rem;
+    background-color: #4D4D4D;
+    color: #FFF7ED;
+    text-align: center;
+
+}
+.my-link :active{
+    color: #161616;
+    margin-right:2rem ;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 2rem;
+    font-family: Inter;
+}
+a{
+    text-decoration: none;
+
+}
+a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+a:active{
+    text-decoration: underline;
+    font-weight: bold;
+}
+a.active-link{
+        font-weight: bold;
+        text-decoration: underline;
+        color: #161616;
+        margin-left: 2rem;
+        font-family: Inter;
+        font-size: 1rem;
+
+}
+.islinky{
+    color: #161616;
+    margin-right:2rem ;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: Inter;
+    text-decoration: underline;
+    font-weight: bolder;
 }
 @media only screen and (max-width: 600px) {
     *{

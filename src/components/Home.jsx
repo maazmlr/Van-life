@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Home= ()=>{
     return(
@@ -11,7 +11,7 @@ const Home= ()=>{
             <p className="p-content">
             Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.
             </p>
-            <Link className="" to={"/vans"}><button className="button">Find your van</button></Link>
+            <NavLink className="" to={"/vans"}><button className="button">Find your van</button></NavLink>
         </div>
         </>
 
