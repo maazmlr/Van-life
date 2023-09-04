@@ -10,6 +10,7 @@ import Nav from "./components/Nav"
 import Dashboard from "./components/hostpage/Dashboard";
 import Income from "./components/hostpage/Income";
 import Reviews from "./components/hostpage/Reviews";
+import LayoutHost from "./components/hostpage/LayoutHost";
 
 export default function App (){
     return(
@@ -21,10 +22,12 @@ export default function App (){
         <Route path='/about' element={<About/>} />
         <Route path='/vans' element={<Vans/>}/>
         <Route path='/vans/:id' element={<VansDetails/>} />
-        <Route path='/host' element={<Dashboard />} />
-        <Route path='/host/income' element={<Income />} />
-        <Route path='/host/reviews' element={<Reviews />} />
+        {/* <Route path='/host' element={<Dashboard />} /> */}
+        <Route path="/host" element={<LayoutHost/>}>
 
+          <Route path='/host/income' element={<Income />} />
+          <Route path='/host/reviews' element={<Reviews />} />
+        </Route>
 
         </Route>
         </Routes>

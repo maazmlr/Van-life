@@ -212,6 +212,18 @@ font-style: normal;
 font-weight: 500;
 line-height: 1.49494rem; /* 149.496% */
 }
+.link-container{
+
+    margin: 4rem;
+}
+.linky{
+    color: #161616;
+    margin-right:2rem ;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: Inter;
+}
 @media only screen and (max-width: 600px) {
     *{
         font-size: 8px;
