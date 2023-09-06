@@ -270,6 +270,47 @@ a.active-link{
     text-decoration: underline;
     font-weight: bolder;
 }
+.head{
+    color: #161616;
+font-family: Inter;
+font-size:4rem;
+font-style: normal;
+font-weight: 700;
+line-height: 2.10325rem; /* 105.164% */
+}
+.hvans-body{
+    padding: 0 4rem;
+}
+p.head{
+    margin-bottom: 2rem;
+}
+.data{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+}
+.data>img{
+    width: 5rem;
+height: 5rem;
+flex-shrink: 0;
+margin-right: 2rem;
+}
+p.vans-name{
+    color: #161616;
+font-family: Inter;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: 1.97888rem; /* 158.308% */
+}
+.vans-nav{
+    padding:0 2rem ;
+}
+.vans-nav>a{
+    color: #4D4D4D;
+    font-size: larger;
+    margin-right: 2rem  ;
+}
 @media only screen and (max-width: 600px) {
     *{
         font-size: 8px;

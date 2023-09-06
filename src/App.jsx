@@ -12,7 +12,11 @@ import Income from "./components/hostpage/Income";
 import Reviews from "./components/hostpage/Reviews";
 import LayoutHost from "./components/hostpage/LayoutHost";
 import Layout from "./components/Layout";
-
+import HostVans from "./components/hostpage/HostVans";
+import HostVansDetails from "./components/hostpage/hostVansDetails";
+import HostVansDescription from "./components/hostpage/host-vans/HostVansDesc";
+import HostVansPhotos from "./components/hostpage/host-vans/HostVansPhotos";
+import HostVansPrice from "./components/hostpage/host-vans/HostVansPrice";
 export default function App (){
     return(
         <BrowserRouter>
@@ -28,6 +32,13 @@ export default function App (){
 
           <Route path='income' element={<Income />} />
           <Route path='reviews' element={<Reviews />} />
+          <Route path='vans' element={<HostVans />} />
+          <Route path='vans/:id' element={<HostVansDetails />}>
+
+            <Route index element={<HostVansDescription/>}/>
+            <Route path="photos" element={<HostVansPhotos/>}/>
+            <Route path="price" element={<HostVansPrice/>}/>
+          </Route>
         </Route>
 
         </Route>
