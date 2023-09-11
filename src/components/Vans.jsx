@@ -1,17 +1,36 @@
 import React, { useEffect, useState } from "react";
 import VansImg from "./VansImg";
-import { NavLink } from "react-router-dom";
-
+import { NavLink, useSearchParams ,useLoaderData } from "react-router-dom";
+import { getVans } from "../api";
+export function loader(){
+  return getVans()
+}
 const Vans=()=>{
+
+  const dat =useLoaderData()
+  console.log(dat)
+    const [seacrhParam,SetsearchParam]=useSearchParams()
+
+    let typeFilter=seacrhParam.get("type")
+
+    console.log(typeFilter)
+
+
     const [data,setData]=useState([])
     useEffect(()=>{
         fetch("/api/vans")
             .then(res => res.json())
             .then(data => setData(data.vans))
     },[])
-    const elements=data.map((v,i)=>{
+
+
+    const display=typeFilter ? data.filter(item=>item.type.toLowerCase()===typeFilter) : data
+    
+
+
+    const elements=display.map((v,i)=>{
         return(
-          <NavLink to={`./${v.id}`}>
+          <NavLink to={`${v.id}`} state={{search:seacrhParam.toString(),type:typeFilter}}>
         <VansImg
         key={v.id}
         imgurl={v.imageUrl} 
@@ -22,10 +41,18 @@ const Vans=()=>{
         />
         </NavLink>  
      ) })
-   const a =data.map((v)=>{
-        console.log(v.imageUrl)
-   })
-   console.log(a)
+ 
+
+
+     function genNewSearchParamString(key, value) {
+        const sp = new URLSearchParams(seacrhParam)
+        if (value === null) {
+          sp.delete(key)
+        } else {
+          sp.set(key, value)
+        }
+        return `?${sp.toString()}`
+      }
     return(
         <>
         <div className="vans-container">
@@ -34,13 +61,13 @@ const Vans=()=>{
             </p>
             <div className="area">
             <div className="btn-area">
-                <button className="btn-filter-1">Simple</button>
-                <button className="btn-filter-2">Luxury</button>
-                <button className="btn-filter-3">Rugged</button>
+                <button onClick={()=>SetsearchParam(genNewSearchParamString("type", "simple"))} className={`btn-filter-1 ${typeFilter==="simple"?"click":"btn"}`}>Simple</button>
+                <button onClick={()=>SetsearchParam(genNewSearchParamString("type", "luxury"))} className={`btn-filter-2 ${typeFilter==="luxury"?"click":""}`}>Luxury</button>
+                <button onClick={()=>SetsearchParam(genNewSearchParamString("type", "rugged"))} className={`btn-filter-3 ${typeFilter==="rugged"?"click":""}`}>Rugged</button>
             </div>
-            <p className="btn-filter">
-                Clear All filter
-            </p>
+           { typeFilter && <p className="btn-filter">
+                <NavLink to={"."}>Clear All filter </NavLink>
+            </p>}
             </div>
             
             

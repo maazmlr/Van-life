@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import {  useLocation, useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 
 const VansDetails=()=>{
     const params=useParams()
     const [vans,setVans]=useState(null)
+
+    const location=useLocation()
+    console.log(location)
     useEffect(()=>{
         fetch(`/api/vans/${params.id}`)
         .then(res=> res.json())
@@ -16,7 +19,7 @@ const VansDetails=()=>{
         {
             vans ?(
             <>
-            <NavLink to={"/vans"} className="back">back to the vans</NavLink>
+            <NavLink relative="path" to={`..?${location.state.search}`} className="back">{`Back to ${location.state.type ? location.state.type+" vans" :"all vans"}`}</NavLink>
             <div className="vans-body">
                 <img className="van-img" src={ `${vans.imageUrl}`} alt="" />
                 <buttton className="type">{vans.type}</buttton>

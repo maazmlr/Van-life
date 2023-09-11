@@ -2,7 +2,13 @@ import { useEffect, useState } from "react"
 import HostVansCont from "./HostVansCont"
 import { Link, NavLink } from "react-router-dom"
 
+
+export function loader(){
+    return"loader function"
+}
 const HostVans=()=>{
+
+  
 
     const [data,setData]=useState(null)
     useEffect(()=>{
